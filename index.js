@@ -13,3 +13,14 @@ function increaseRankBy(n) {
     liVal[i].innerHTML = (parseInt(liVal[i].innerText) + n).toString();
   }
 }
+
+function deepestChild() {
+  const div = document.querySelector('div#grand-node');
+  if (div.hasChildNodes()) {
+    let next = div.querySelector('div');
+    while(next.hasChildNodes()) {
+      next = next.querySelector('div');
+    }
+    return next;
+  }
+}
